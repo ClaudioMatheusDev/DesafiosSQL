@@ -1,0 +1,16 @@
+CREATE DATABASE Desafios_Sql;
+
+USE Desafios_Sql;
+
+
+CREATE TABLE Clientes(
+Id_Cliente INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
+Nome VARCHAR(100) NOT NULL,
+Email VARCHAR(200) NOT NULL,
+Cidade VARCHAR(100) NOT NULL
+);
+
+SELECT * FROM Clientes WHERE Cidade ='São Paulo';
+
+
+
