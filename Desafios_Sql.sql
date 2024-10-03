@@ -86,3 +86,13 @@ Quantidade INT NOT NULL
 
 UPDATE Estoque SET Quantidade = Quantidade + 10 WHERE Id_Produto = 1;
 
+-- DESAFIO 8
+
+DELETE FROM Clientes 
+WHERE Id_Cliente NOT IN (
+SELECT Id_Cliente
+FROM Pedidos
+WHERE Data >= CURRENT_DATE - INTERVAL 6 MONTH);
+)
+  
+
