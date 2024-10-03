@@ -60,4 +60,29 @@ Quantidade INT NOT NULL
 SELECT v.Id_Produto, SUM(v.Quantidade) AS Total_Vendido
 FROM Vendas v
 GROUP BY v.Id_Produto;
- 
+
+-- DESAFIO 6 
+
+CREATE TABLE Funcionarios(
+Id_Funcionario INT PRIMARY KEY AUTO_INCREMENT NOT NULL,  
+Nome VARCHAR(100) NOT NULL,
+SALARIO DECIMAL(10, 2) NOT NULL
+);
+
+SELECT Id_Funcionario, Nome
+FROM Funcionarios
+WHERE Salario > (SELECT AVG(Salario) FROM Funcionarios);
+-- Utilizando uma subconsulta
+
+
+-- DESAFIO 7
+
+CREATE TABLE Estoque(
+Id_Estoque INT PRIMARY KEY AUTO_INCREMENT NOT NULL,  
+Id_Produto INT NOT NULL,
+FOREIGN KEY(Id_Produto) REFERENCES Produtos(Id_Produto),
+Quantidade INT NOT NULL 
+  );
+
+UPDATE Estoque SET Quantidade = Quantidade + 10 WHERE Id_Produto = 1;
+
